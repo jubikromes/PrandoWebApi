@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Filters\**" />
+    <Content Remove="Filters\**" />
+    <EmbeddedResource Remove="Filters\**" />
+    <None Remove="Filters\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20180818002608_initial.cs" />
+    <Compile Remove="Migrations\20180818002608_initial.Designer.cs" />
+    <Compile Remove="Migrations\20180818003002_initial2.cs" />
+    <Compile Remove="Migrations\20180818003002_initial2.Designer.cs" />
+    <Compile Remove="Migrations\20180819193036_AddedVehicleOwner.cs" />
+    <Compile Remove="Migrations\20180819193036_AddedVehicleOwner.Designer.cs" />
+    <Compile Remove="Migrations\20180819205124_AddedVehiclemodel.cs" />
+    <Compile Remove="Migrations\20180819205124_AddedVehiclemodel.Designer.cs" />
+    <Compile Remove="Migrations\20180821102648_changedtoibaseentity.cs" />
+    <Compile Remove="Migrations\20180821102648_changedtoibaseentity.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+    <Folder Include="Models\" />
+    <Folder Include="Dto\" />
+    <Folder Include="Utilities\AuthUtils\" />
+    <Folder Include="Utilities\Requirements\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="automapper" Version="7.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.0-preview1-final" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.1.0-preview1-final" />
+  </ItemGroup>
+
+</Project>
