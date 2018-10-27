@@ -21,7 +21,6 @@ namespace PrandoWebServices.Controllers
             _accountSvc = accountSvct;
         }
         [Route("register")]
-        //[ProducesResponseType(typeof(JsonResponse), 200)]
         public async Task<IActionResult> Post([FromBody] RegistrationViewModel model)
         {
             var response = new JsonResponse { };

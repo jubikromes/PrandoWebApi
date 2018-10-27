@@ -18,7 +18,6 @@ namespace PrandoWebServices.Controllers
             _accountSvc = accountSvc;
         }
         [HttpPost]
-        //[ProducesResponseType(typeof(JsonWrapperResponse<>), statusCode: 200)]
         [Route("login")]
         public async Task<IActionResult> Post([FromBody]CredentialsViewModel credentials)
         {

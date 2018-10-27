@@ -26,6 +26,7 @@ using PrandoWebServices.Data.Abstractions;
 using System.Reflection;
 using PrandoWebServices.Repositories;
 using PrandoWebServices.Services.UserService;
+using PrandoWebServices.Filters;
 
 namespace PrandoWebServices
 {
@@ -96,7 +97,9 @@ namespace PrandoWebServices
             services.AddScoped<IAccountService, AccountService>();
             //register dependencies
             services.AddAutoMapper();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc(options => {
+                options.Filters.Add(typeof(ModelStateValidationFilterAttribute));
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddCors(options => options.AddPolicy("AllowAllHeaders", bui => bui.AllowAnyOrigin()
                 .AllowAnyHeader().AllowAnyMethod()));
         }

@@ -13,13 +13,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Filters\**" />
-    <Content Remove="Filters\**" />
-    <EmbeddedResource Remove="Filters\**" />
-    <None Remove="Filters\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Remove="Migrations\20180818002608_initial.cs" />
     <Compile Remove="Migrations\20180818002608_initial.Designer.cs" />
     <Compile Remove="Migrations\20180818003002_initial2.cs" />
